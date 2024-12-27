@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>드롭다운 메뉴</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    header{
+      background-color: red;
+      width: 100%;
+      height : 100px;
+    }
+    
+    .blank_header_box{
+      background-color: white;
+      height : 50px;
+    }
+    nav{
+      background-color: blue;
+      color: white;
+      height : 50px;
+      width: 100%;
+      display: flex;
+    }
+    ul{
+      display: flex;
+      list-style-type: none;
+      width: 100%;
+      margin:auto;
+    }
+    li{
+      margin:20px;
+    }
+    .header_home_box{
+      background-color: orange;
+      width: 80px;
+      height: 100%;
+      margin: auto;  
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <div class="blank_header_box"></div>
+    <nav>
+      <ul>
+        <li class="menu1--container">Menu1
+          <!-- <div class="menu1--container"> -->
+            <div>Menu1-1</div>
+            <div>Menu1-2</div>
+            <div>Menu1-3</div>
+            <div>Menu1-4</div>
+          <!-- </div> -->
+        </li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+      </ul>
+      <div class="header_home_box">home</div>
+    </nav>
+    
+  </header>
+  
+</body>
+</html>
