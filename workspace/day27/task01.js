@@ -12,7 +12,7 @@ class Student{
 
 //1) 객체에 최소 3명의 데이터를 추가하고 이름과 성적 출력하기
 const st1 = new Student("배", 26, 'A');
-const st2 = new Student("박", 20, 'A');
+const st2 = new Student("박", 20, 'B');
 const st3 = new Student('최', 22, 'A+');
 
 const students = [st1, st2, st3]; // ★★
@@ -22,27 +22,19 @@ students.forEach(student => {
 });
 
 //2) 객체에서 이름 키에 해당하는 값들만 출력하기
-console.log(st1.name);
-console.log(st2.name);
-console.log(st3.name);
+// console.log(st1.name);
+// console.log(st2.name);
+// console.log(st3.name);
+students.forEach(student => {
+  console.log(`이름 : ${student.name}`);
+});
 
 //3) 객체에 새로운 속성(학년)을 추가하고 객체 전체 출력하기(for문 사용)
-class Student2{
-  constructor(name, age, grade, year){
-    name = this.name;
-    age = this.age;
-    grade = this.grade;
-    year = this.year;
-  }
-}
+students.forEach(student => {
+  student.grade = '1학년';
+  console.log(student);
+});
 
-const st4 = new Student2("배", 26, 'A', 1);
-const st5 = new Student2("박", 20, 'B', 2);
-const st6 = new Student2('최', 22, 'A+', 3);
-
-for(let i in st4){
-  console.log(st4[i]);
-}
 
 //2. 배열의 모든 요소를 2배로 증가시켜 새로운 배열을 만들어 출력하기
 const numbers = [1, 2, 3, 4, 5];
@@ -51,18 +43,18 @@ const numbers = [1, 2, 3, 4, 5];
 //                                        map은 배열 선언 없이 바로 = 을 이용해서 값을 넣을 수 있음 ★★
 
 // [forEach를 사용하는 방법]
-// const twiceNumbers = []; // 빈 배열 선언 필수
+const twiceNumbers = []; // 빈 배열 선언 필수
 
-// numbers.forEach(function(element){
-//   twiceNumbers.push(element * 2);
-// })
-// console.log(twiceNumbers);
+numbers.forEach(function(element){
+  twiceNumbers.push(element * 2);
+})
+console.log(twiceNumbers);
 
 //[map을 사용하는 방법]
-const twiceNumbers = numbers.map(function(element){
+const twiceNumbers2 = numbers.map(function(element){
   return (element * 2);
 });
-console.log(twiceNumbers);
+console.log(twiceNumbers2);
 
 //2) 배열의 길이를 구하고 출력하기
 console.log(numbers.length);
@@ -77,12 +69,28 @@ console.log(animals.indexOf('cat'));
 
 //5) 배열의 첫번째와 마지막요소를 제거한 뒤 남은 배열 출력하기
 const colors = ['red', 'blue', 'green', 'yellow'];
+colors.pop();
+colors.shift();
+console.log(colors);
 
 
 //3. 혼합문제
 //1) 배열의 요소를 객체로 변환하여 새로운 배열을 만들기
 //  주어진 배열의 값을 객체의 value 속성으로 저장할것
 const data = [10, 20, 30];
+
+// 1. forEach 사용
+const data1 = [];
+data.forEach(function (element){
+  data1.push(element);
+});
+console.log(data1);
+
+// 2. map 사용
+const data2 = data.map(function(element){
+  return element;
+})
+console.log(data2);
 
 //2) 배열을 활용하여 특정값을 기준으로 객체 업데이트하기
 const users = [
@@ -91,6 +99,31 @@ const users = [
   {id : 3, name : "맹구", age : 5, subject : 'javascript'}, 
 ];
 //id가 2인 객체의 나이를 6으로 변경, subject를 'web표준'으로 변경
+users[1].age = 6;
+users[1].subject = 'web표준';
+console.log(users);
+
 
 //3) 배열의 요소를 모두 더하여 총합 출력하기
 const numbers2 = [2, 5, 20, 10];
+
+//1 for..of
+let sum = 0;
+for(let i of numbers2){
+  sum += i;
+}
+console.log(sum);
+
+//2. for..in
+let sum2 = 0;
+for(let i in numbers2){
+  sum2 += numbers2[i];
+}
+console.log(sum2);
+
+//3. forEach
+let sum3 = 0;
+numbers2.forEach(function (element){
+  sum3 += element;
+});
+console.log(sum3);
