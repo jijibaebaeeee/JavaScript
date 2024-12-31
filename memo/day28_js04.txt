@@ -1,0 +1,62 @@
+day28
+
+1. DOM
+  1) DOM(Document Object Model)
+	html 태그들을 하나씩 객체화한 것을 의미한다
+	html 페이지 내용과 모양을 제어하기 위해 사용하는 객체이며 HTML 태그 당 dom 객체가 하나씩 생성된다.
+	html 태그의 포함관계에 따라서 부모, 자식, 형제 관계로 구성된다
+
+  2) DOM selector 종류
+	document.getElementById("id명");
+	document.getElementByClassName("class명");
+	document.getElementsByTagName("tag명");
+
+ 	document.getElementByName("name");
+	document.querySelector('선택자');
+	document.querySelectorAll('선택자');
+
+  3) innerHtml과 innerText
+    - innerHtml
+	요소의 내부 HTML을 나타내는 속성
+	HTML 태그를 포함한 요소의 내용을 변경할 수 있다.
+	ex) const test = document.getElementById("test");
+		test.innerHTML = "<strong>안녕</strong>";
+
+
+    - innerText
+	요소의 텍스트 내용을 나타내는 속성
+	HTML 태그를 고려하지 않고 텍스트 내용만 조작할 수 있다
+	ex) const test = document.getElementById("test"); 
+	    test.innerHTML = "안녕하세요";
+
+
+
+  4) 이벤트
+	발생한 사건을 의미한다.
+	사용자가 버튼을 클릭하거나 항목을 선택하는 등의 사건을 이벤트라고 한다
+	이벤트가 발생하면 자바스크립트의 코드가 실행되도록 구현하여 사용자와 상호작용하는 페이지를 만들 수 있다.
+
+    - 마우스 이벤트
+	click : 요소를 클릭하면 발생
+	mouseover : 마우스 커서를 해당 요소에 올리면 발생
+	mouseout : 마우스 커서가 해당 요소의 영역을 벗어나면 발생
+
+    - 키보드 이벤트
+	keydwown : 키보드를 누르는 동안 발생
+	keyup : 키보드를 눌렀다가 뗄 때 발생
+	keypress : 키보드를 눌렀을 때 발생
+	...
+
+    - 문서 로딩 이벤트
+	load : 문서(웹페이지)가 로딩이 끝나면 발생
+	unload : 문서를 벗어날 때 발생
+	scroll : 문서가 스크롤 되면 발생
+	..
+
+    - 폼 이벤트
+   	입력이 가능한 요소의 이벤트
+   	focus : 폼 요소에 포커스가 되면 발생
+   	blur : 포커스를 잃으면 발생
+   	change : 입력값이 바뀌거나 체크상태가 변경되면 발생
+   	submit : submit 버튼을 누르면 발생
+   	..

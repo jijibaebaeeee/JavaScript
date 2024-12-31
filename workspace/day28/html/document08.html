@@ -1,0 +1,30 @@
+<!-- 8번 : name속성을 이용한 선택-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>name 속성을 이용한 선택</title>
+</head>
+<body>
+  <h1>name 속성</h1>
+  <form>
+    <!-- (div>input)*3  div태그안에 input 태그 3개-->
+    <div><input type="text" name="id" placeholder="id를 입력하세요" value="abc"></div>
+    <div><input type="pasword" name="pw" placeholder="비밀번호를 입력하세요" value="1234"></div>
+    <div>
+      <!-- (label>input:checkbox)*3 -->
+      <label><input type="checkbox" name="language" value="c언어">c언어</label>
+      <label><input type="checkbox" name="language" value="java언어">java언어</label>
+      <label><input type="checkbox" name="language" value="python언어">python언어</label>
+    </div>
+  </form>
+</body>
+<script>
+  console.log(document.getElementsByName("id"));
+  console.log(document.getElementsByName("id")[0]); //해당 태그가 포함되어서 나온다.
+  console.log(document.getElementsByName("id")[0].value); // ("id").value 시 undefined 나온다.
+  console.log(document.getElementsByName("id")[0].getAttribute('value')); //abc
+  document.getElementsByName("language").forEach((checkbox) => (checkbox.checked = true));
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!-- 4번 : DOM4 getElementsByName-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementsByName</title>
+</head>
+<body>
+  <input type="text" name="이름" value="짱구">
+  <input type="text" name="나이" value="5">
+  <input type="text" name="id">
+  <input type="password" name="password">
+</body>
+<script>
+  const result = document.getElementsByName("이름"); // s가 붙으면 같은게 여러 개 있을 수 있음
+  console.log(result); // nodelist로 출력
+  console.log(result[0]); // 태그 전체 출력
+  console.log(result[0].value); // value 속성 출력
+</script>
+</html>

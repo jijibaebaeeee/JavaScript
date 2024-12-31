@@ -1,0 +1,23 @@
+<!-- 5번 : querySelector -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector</title>
+ </head>
+ <body>
+  <div class="myDiv" id="myDiv_p">
+    <p>div 태그 안의 p태그입니다</p>
+  </div>
+  <div class="myDiv">
+    <span>div 태그 안의 span 태그입니다.</span>
+  </div>
+ </body>
+ <script>
+  const result1 = document.querySelector("#myDiv_p p"); // 자식 선택자
+  console.log(result1);
+  const result2 = document.querySelector(".myDiv span");
+  console.log(result2.innerText); // 태그 빼고 내용만
+ </script>
+ </html>

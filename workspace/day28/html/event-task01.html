@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button{
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button id="button1">Click Me</button>
+  <button id="button2">Click Me</button>
+  <button id="button3">Click Me</button>
+  <button id="button4">Click Me</button>
+</body>
+<script>
+  //각 버튼마다 클릭이벤트 주기(배경 색상 자유롭게 변경)
+  //각 버튼을 클릭했을 때마다 몇번 클릭했는지 콘솔창에 입력되도록하기
+HTMLCollection.prototype.forEach = Array.prototype.forEach; 
+
+// const button1 = document.getElementById('button1');
+// const button2 = document.getElementById('button2');
+// const button3 = document.getElementById('button3');
+// const button4 = document.getElementById('button4');
+
+// button1.addEventListener("click", function(){
+//   let count = 0;
+//   button1.setAttribute("style", "background-color:blue");
+//   console.log(`button1 클릭 : ${count++}번`);
+// });
+
+// button2.addEventListener("click", function(){
+//   let count = 0;
+//   button2.setAttribute("style", "background-color:red");
+//   console.log(`button2 클릭 : ${count++}번`);
+// });
+
+// button3.addEventListener("click", function(){
+//   let count = 0;
+//   button3.setAttribute("style", "background-color:black");
+//   console.log(`button3 클릭 : ${count++}번`);
+// });
+
+// button4.addEventListener("click", function(){
+//   let count = 0;
+//   button4.setAttribute("style", "background-color:beige");
+//   console.log(`button4 클릭 : ${count++}번`);
+// });
+
+// 색상 객체
+const colors = {
+  button1 : 'red',
+  button2 : 'blue',
+  button3 : 'green',
+  button4 : 'yellow'
+};
+
+//클릭 횟수를 저장하는 객체
+const clickCount = {};
+
+//모든 버튼에 이벤트 리스너 추가
+document.querySelectorAll('button').forEach((button) => {
+  //각 버튼의 클릭 횟수 0으로 초기화
+  clickCount[button.id] = 0;
+  //클릭 이벤트 추가
+  button.addEventListener('click', ()=>{
+    //클릭 횟수 추가
+    clickCount[button.id]++;
+    //배경색 변경
+    button.style.backgroundColor = colors[button.id];
+    //콘솔에 클릭횟수 출력
+    console.log(`${button.id} 클릭 ${clickCount[button.id]}번`);
+  })
+})
+</script>
+</html>
