@@ -1,4 +1,4 @@
-// 11번 7번과의 실행순서 차이를 확인하기.
+// 11번 : 7번과의 실행순서 차이를 확인하기.
 // 7번은 1 3 2 순서
 
 
@@ -15,12 +15,12 @@ function saveDB(user){
 
       if(beforeLength < afterLength){
         resolve(user);
-        console.log(`${user.name}의 정보가 저장되었습니다`)
+        console.log(`${user.name}의 정보가 저장되었습니다`) // 얘는 왜 delay가 없지?
       }else{
         reject(new Error("저장되지 않았습니다"));
       }
-    });
-  }, 3000);
+    }, 3000);
+  });
 }
 
 //사용자 정보를 받아서 이메일 전송 메시지를 출력하는 함수
@@ -40,7 +40,7 @@ function getResult(user){
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(`방문자 ${user.name}`);
-    }, 500);
+    }, 10000);
   });
 }
 
