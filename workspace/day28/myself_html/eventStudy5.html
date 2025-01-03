@@ -1,0 +1,31 @@
+<!-- 18번 체크박스 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- (label>input:checkbox{선택$})*3   -->
+  <label><input type="checkbox" name="선택" value="선택1">선택1</input></label>
+  <label><input type="checkbox" name="선택" value="선택2">선택2</input></label>
+  <label><input type="checkbox" name="선택" value="선택3">선택3</input></label>
+  <p id="result"></p>
+</body>
+</html>
+<!-- 목표
+input태그의 checkbox를 모두 받는 변수 checkboxs 선언
+check된 value를 담아줄 p태그를 받는 변수 result 선언
+checkboxs를 반복하며 checkboxs에 클릭 이벤트 추가
+클릭이 되었다면
+strong 요소를 추가한 것을 strong 변수에 저장한다
+클릭된 요소를 출력하고
+strong 요소의 내용에 value를 저장한다
+result에 strong을 추가한다.
+클릭이 해제 된다면?
+id가 result인 것에 strong을 strongs에 저장한다
+target을 선언하고, strongs을 반복하며
+strong의 내용과 target의 value가 같은지를 확인하여 필터링한다
+그것의 첫번째 원소를 저장한다
+result에서 target을 제거한다 -->

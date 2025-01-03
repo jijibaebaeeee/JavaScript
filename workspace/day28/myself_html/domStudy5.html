@@ -1,0 +1,36 @@
+<!-- 5번 : querySelector -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>querySelector</title>
+</head>
+<body>
+ <div class="myDiv" id="myDiv_p">
+   <p>div 태그 안의 p태그입니다</p>
+ </div>
+ <div class="myDiv">
+   <span>div 태그 안의 span 태그입니다.</span>
+ </div>
+</body>
+<script>
+  const result1 = document.querySelector('#myDiv_p > p'); // NodeList
+  console.log(result1); // 태그 전체 출력된다. 속성에 접근하고싶으면 인덱스 번호가 필요하다.
+  console.log(result1.innerHTML); // 태그는 없이 내용만 출력되는디?
+  console.log(result1.innertext); // undefined !!!!
+
+  const result2 = document.querySelector('.myDiv > span');
+  console.log(result2.innerHTML);
+  console.log(result2);
+
+</script>
+</html>
+<!-- 목표
+result1이라는 변수를 이용해 id 가 myDiv_p인 태그의 자식인 <p>태그에 접근하여 출력하기
+result2라는 변수를 이용해 클래스가 myDiv인 태그의 자식인 sapn태그에 접근하여 내용만 출력하기 -->
+
+<!--결과
+NodeList에서는 태그를 포함하여 전체 출력하고싶으면 인덱스 없이 출력한다.
+결과에 innerHTML을 사용하면 태그가 빠지고 내용만 출력!-->

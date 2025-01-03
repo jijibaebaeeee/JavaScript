@@ -1,0 +1,74 @@
+<!-- 7번 : 클래스 이름을 이용한 선택-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - 클래스이름을 이용한 선택</title>
+</head>
+<body>
+  <h1>클래스 이름름을 이용한 선택</h1>
+  <!-- div>ul>li.item{$번째 아이템입니다.}*5 -->
+  <div>
+    <ul>
+      <li class="item">1번째 아이템입니다.</li>
+      <li class="item">2번째 아이템입니다.</li>
+      <li class="item">3번째 아이템입니다.</li>
+      <li class="item">4번째 아이템입니다.</li>
+      <li class="item">5번째 아이템입니다.</li>
+    </ul>
+  </div>
+</body>
+<script>
+  const items = document.querySelectorAll(".item"); // NodeList
+  items.forEach((element, index) => {
+    if(index % 2 === 0){
+      element.classList.add('odd');
+      // items[index].classList.add('odd');
+    }else{
+      element.classList.add('even');
+      // items[index].classList.add('even');
+    };
+  });
+  console.log(items);
+
+  // HTMLCollection.prototype.forEach = Array.prototype.forEach;
+  // const items2 = document.getElementsByClassName("item");
+  // items2.forEach((element, index) => {
+  //   if(index % 2 === 0){
+  //     element.classList.add('odd');
+  //   }else{
+  //     element.classList.add('even');
+  //   }
+  // });
+  
+  // const colors = {even : "blue", odd : "red"};
+  // items.forEach((element, index) => { // <- NodeList 이므로 인덱스로 접근 x
+  //   if(element.contains('even')){
+  //     element.style.color = "blue";
+  //   }else{
+  //     element.style.color = "red";
+  //   }
+  // })
+
+  const colors = {even : "blue", odd : "red"};
+  items.forEach((element) => {
+    const className = element.classList.contains('even') ? 'even' : 'odd';
+    element.style.color = colors[className];
+  })
+
+</script>
+</html>
+<!-- 목표1(NodeList사용)
+items 변수를 이용해 class명이 item인 리스트에 접근하고
+짝수번째 리스트에는 클래스에 even을 추가하고,
+홀수번째 리스트에는 클래스에 odd를 추가한다.
+
+목표2(HTMLCollection사용)
+items2 변수를 이용해 class명이 item인 리스트에 접근하고
+짝수번째 리스트에는 클래스에 even을 추가하고,
+홀수번째 리스트에는 클래스에 odd를 추가한다.
+
+const colors = {even : "blue", odd : "red"};
+위 색깔 객체를 이용하여 even과 odd에 각각 글자 색을 적용할것 -->

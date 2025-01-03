@@ -1,0 +1,33 @@
+<!-- 4번 : DOM4 getElementsByName-->
+<!-- 목표
+result를 선언해 input 태그의 name이 이름인 것에 접근한다
+결과를 nodelist형태로 출력하고
+태그 전체를 출력하고
+value 속성을 출력할 것 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementsByName</title>
+</head>
+<body>
+  <input type="text" name="이름" value="짱구">
+  <input type="text" name="나이" value="5">
+  <input type="text" name="id">
+  <input type="password" name="password">
+</body>
+<script>
+  const result = document.getElementsByName("이름"); // --> NodeList
+  console.log(result);
+  console.log(result.value); // undefined
+  console.log(result[0].value); // 1개라도 인덱스를 붙여야 value에 접근이 가능하다.
+</script>
+</html>
+<!-- result를 선언해 input 태그의 name이 이름인 것에 접근한다
+결과를 nodelist형태로 출력하고
+태그 전체를 출력하고
+value 속성을 출력할 것 -->
+
+<!--결과
+NodeList에서 1개라도 인덱스를 붙여야 value에 접근이 가능하다.-->

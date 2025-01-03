@@ -1,0 +1,40 @@
+<!-- 3번 : DOM3 getElementByTagName -->
+<!-- 목표
+result라는 변수를 이용해서 div태그에 접근하고
+div 태그의 수 만큼 반복을 돌면서 HTML 태그를 포함한 전부를 출력한다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementByTagName</title>
+</head>
+<body>
+  <h1>DOM연습중입니다</h1>
+  <P>P태그는 paragrah의 약자입니다</P>
+  <div>div 태그입니다</div>
+  <div>div 태그 1번째</div>
+  <div>div 태그 2번째</div>
+  <div>div 태그 3번째</div>
+  <div>div 태그 4번째</div>
+  <div>div 태그 5번째</div>
+</body>
+<!-- <script>
+  const result = document.querySelectorAll('div'); //이렇게하니까 태그가 안나오는데? 
+  result.forEach((element) =>{
+    console.log(element.innerHTML);
+    console.log(element); ---- NodeList의 경우에는 인덱스 없이 반복해서 출력했을 때 태그를 볼 수 있었다.
+  })
+</script> -->
+<!-- <script>
+  const result = document.getElementsByTagName("div"); //이렇게해도 태그를 볼 수 없었다.
+  for(let i = 0; i < result.length; i++){
+    console.log(result[0]); ----- HTMLCollection의 경우에는 인덱스에 접근해서 출력했을 때 태그를 볼 수 있었다.
+    console.log(result[i].innerText);
+  }
+</script> -->
+</html>
+<!--결론-->
+<!-- NodeList의 경우에는 인덱스 없이 반복해서 출력했을 때 태그를 볼 수 있었다.
+HTMLCollection의 경우에는 인덱스에 접근해서 출력했을 때 태그를 볼 수 있었다. -->
+

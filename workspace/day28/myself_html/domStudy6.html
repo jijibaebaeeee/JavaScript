@@ -1,0 +1,39 @@
+<!-- 6번 : querySelectorAll -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelectorAll</title>
+</head>
+<body>
+  <h1>과일리스트</h1>
+  <ol>
+    <li>사과</li>
+    <li>오렌지</li>
+    <li>귤</li>
+    <li>포도</li>
+    <li>복숭아</li>
+  </ol>
+</body>
+<script>
+  const result = document.querySelectorAll('ol > li'); // NodeList
+  console.log(result);
+  result.forEach((element) => {
+    console.log(element);
+  })
+
+</script>
+</html>
+<!-- 목표
+변수 result를 이용하여 리스트의 항목들에 접근하고 출력하기
+또한 모든 리스트의 태그를 포함하여 내용을 출력하기 -->
+
+<!--결과
+NodeList에서는 바로 forEach가능하고.
+태그를 포함하려면 인덱스 필요없이 바로 출력-->
+
+<!--+a
+HTMLCollection에서는 forEach가 불가능하고
+태그를 포함하려면 인덱스를 포함해야한다. -->

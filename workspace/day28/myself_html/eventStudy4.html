@@ -1,0 +1,29 @@
+<!-- 목표
+사용자가 input에 키를 입력하면 p태그로 출력되게 하라 -->
+<!-- 17번 : 키 이벤트 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>키 이벤트</title>
+</head>
+<body>
+  <input type="text" name="name" placeholder="이름을 입력하세요">
+  <p id="name"></p>
+</body>
+<script>
+  const input = document.querySelector("input[name='name']");
+  const p = document.querySelector('#name');
+
+  // input.addEventListener("keyup", function(){
+  //   p.innerText = input.innerText;
+  // });
+  input.addEventListener("keyup", (e)=>{
+    p.innerText = e.target.value;
+    //e = 이벤트객체체
+    //e.target = input 필드의 name과 같음.
+    //e.target.value : 이벤트 발생한 입력 필드의 현재값을 가져온다
+  });
+</script>
+</html>

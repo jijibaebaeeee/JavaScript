@@ -1,0 +1,26 @@
+<!--9번 : id를 이용한 선택-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>id를 이용한 선택</title>
+</head>
+<body>
+  <div>
+    <div id="odd">1번째 div입니다</div>
+    <div>2번째 div입니다</div>
+    <div id="odd">3번째 div입니다.</div>
+  </div>
+</body>
+<script>
+  console.log(document.querySelectorAll('#odd'));
+  document.querySelectorAll('#odd').forEach((element) => element.style.color = "red");
+  document.querySelectorAll('#odd').style.backgorundColor = "green";
+</script>
+</html>
+<!-- 목표
+1. id가 odd인 것을 출력하라
+2. id가 odd인 것의 폰트색을 red로 바꿔라
+3. id가 odd인 것의 배경색을 green으로 바꿔라 -->
