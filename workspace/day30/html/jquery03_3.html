@@ -1,0 +1,33 @@
+<!-- js와 jquery를 사용하여 버튼 이벤트 설정해보기-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- div>div>input:text.number -->
+  <div>
+    <div><input type="text" name="number" value="1" class="number"></div>
+    <div><input type="text" name="number" value="2" class="number"></div>
+    <div><input type="text" name="number" value="3" class="number"></div>
+    <div>
+      <button onclick="changeRed()">js변경</button> <!--클릭시 변경되게 속성으로 이벤트 설정-->
+      <button onclick="$(`.number`).css('border-color', 'blue')">jquery변경</button>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+  function changeRed(){
+    const inputs = document.querySelectorAll("input.number");
+    console.log(inputs);
+    inputs.forEach((input) => {
+      input.style.borderColor = "red";  //style.  으로 쓸 때는 카멜표기법을 사용한다. 나머지는 X
+      console.log(input);
+    })
+  }
+</script>
+</html>

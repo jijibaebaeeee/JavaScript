@@ -1,0 +1,49 @@
+<!-- jquery로 day28의 (event06.html + event06.js) 만들어보기-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <!-- (div>label>input:checkbox.term)*4 -->
+    <div><label>전체동의<input type="checkbox" name="all" class="term"></label></div>
+    <div><label>서비스 이용약관 동의<input type="checkbox" name="term1" class="term"></label></div>
+    <div><label>광고수신 동의<input type="checkbox" name="term2" class="term"></label></div>
+    <div><label>개인정보 이용약관 동의<input type="checkbox" name="term3" class="term"></label></div>
+  </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<!-- //전체동의 체크박스를 클릭할 때마다 실행되는 이벤트 리스너
+<javaScript 버전> 
+all.addEventListener('click', () => {
+  terms.forEach((term) =>{
+    console.log(term);
+    term.checked = all.checked; // all.checked 값을 대입한다
+  });
+});  -->
+<!--jquery 버전-->
+<script>
+  $(`.all`).on("click", (e) => {
+    console.log(e.target.checked);
+    $(`.term`).prop("checked", e.target.checked); // term에 prop 속성을 적용하겠다
+  })
+  $(`.term`).prop)
+
+//약관동의 체크박스를 클릭할 때마다 실행되는 이벤트 리스너
+//<javaScript 버전> 
+// terms.forEach((term) => {
+//   term.addEventListener('click', () => {
+//     all.checked = terms.map(term => term.checked).filter((checked) => checked).length === 3;
+//<jqeury 버전>
+$(`.term`).on("click",(e) => {
+  $(`.all`).prop("checked", $(`.term`).filter(":checked").lenghth === 3);
+  //all클래스에.체크표시를 적용할거야, 언제? -> term클래스에 체크된(:checked) 박스의 수가 3개일 때 
+  console.log($(`.term`).filter("checked").length); // 체크된 체크박스의 개수 출력(확인용)
+})
+
+</script>
+</html>
